@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="zshrc oh-my-zsh p10k.zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -37,6 +37,8 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
+        # Add powerlevel10k theme
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     # Conditionally set the default shell
