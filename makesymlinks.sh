@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=""    # list of files/folders to symlink in homedir
+files="zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -53,7 +53,7 @@ else
             install_zsh
         fi
         if [[ -f /etc/debian_version ]]; then
-            sudo apt-get install zsh
+            sudo apt-get install zsh -y
             install_zsh
         fi
     # If the platform is OS X, tell the user to install zsh :)
